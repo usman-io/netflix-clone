@@ -7,15 +7,21 @@
 
 import SwiftUI
 
+
+struct NavTabViewControllerWrapper: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> NavTabViewController {
+        return NavTabViewController()
+    }
+    
+    func updateUIViewController(_ uiViewController: NavTabViewController, context: Context) {
+        // Update the view controller if needed
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        NavTabViewControllerWrapper()
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
